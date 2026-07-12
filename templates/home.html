@@ -22,4 +22,12 @@ and provide easy access to important safety information for everyone.
 Welcome to the Fire and Rescue Service Vlog Management and Reporting System.
 This website helps manage fire safety videos, rescue reports, awareness campaigns, and emergency updates.
 </p>
+
+{% if user.is_authenticated %}
+    <h2>Welcome, {{ user.username }}!</h2>
+    <p>Role: {{ user.role }}</p>
+{% else %}
+    <h2>Welcome to Fire & Rescue Service</h2>
+{% endif %}
 {% endblock %}
+
